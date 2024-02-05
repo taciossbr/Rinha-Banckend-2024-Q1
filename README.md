@@ -19,9 +19,18 @@ npm run start:dev
 
 
 - [x] Setup Banco + Seeds
-- [ ] POST /clientes/[id]/transacoes
-- [ ] GET /clientes/[id]/extrato
+- [x] POST /clientes/[id]/transacoes
+    - 422 se saldo insuficiente
+    - 200 caso certo
+    - 404 se not found
+- [x] GET /clientes/[id]/extrato
+    - 404 se not found
+    - ultimos 10 transacoes (descrescente)
+    - head da conta
+    - salvar a transacao
 - [ ] Validação
 - [ ] Concorrência
 - [ ] Testes com o Gatling
+- [ ] Arquitetura Docker
+- [ ] Indices
 

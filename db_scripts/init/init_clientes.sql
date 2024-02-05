@@ -1,13 +1,14 @@
 CREATE TABLE clientes (
     id INT PRIMARY KEY,
-    limite BIGINT NOT NULL,
-    saldo BIGINT NOT NULL DEFAULT '0'
+    limite INTEGER NOT NULL,
+    saldo INTEGER NOT NULL DEFAULT '0'
+    -- TODO ver se o INTEGER e suficiente
 );
 
 CREATE TYPE tipo_transacao AS ENUM ('c', 'd');
 CREATE TABLE transacoes(
     id SERIAL PRIMARY KEY, -- TODO ver se precisa disso
-    valor BIGINT NOT NULL,
+    valor INTEGER NOT NULL,
     tipo tipo_transacao NOT NULL,
     descricao VARCHAR(10) NOT NULL,
     realizada_em TIMESTAMP NOT NULL DEFAULT NOW(),
