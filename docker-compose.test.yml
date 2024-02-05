@@ -1,12 +1,13 @@
 version: "3.1"
 
 services:
-  db:
+  dbtest:
     image: postgres:16.1
     restart: always
     ports:
-      - 5432:5432
+      - 5433:5432
     environment:
+      POSTGRES_DB: test
       POSTGRES_USER: rinha
       POSTGRES_PASSWORD: rinha
     volumes:
@@ -14,4 +15,4 @@ services:
       - pg_data:/var/lib/postgresql
 
 volumes:
-  pg_data: {}
+  pg_data_test: {}
