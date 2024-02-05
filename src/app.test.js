@@ -3,15 +3,26 @@ if (process.env.NODE_ENV === 'test') {
   require('dotenv').config('.env.test')
 }
 const app = require('./app')
-const { connectDatabase, closeDatabaseConnection } = require('./db')
+const { connectDatabase, closeDatabaseConnection, dbClient } = require('./db')
 
 describe('app.js', () => {
   beforeAll(async () => {
     await connectDatabase()
+    await dbClient.query('TRUNCATE transacoes')
+    await dbClient.query('DELETE FROM clientes')
+    await dbClient.query(`
+      INSERT INTO clientes VALUES
+      ('1', '100000', '0'),
+      ('2', '80000', '0'),
+      ('3', '1000000', '0'),
+      ('4', '10000000', '0'),
+      ('5', '500000', '0')`)
   })
+
   afterAll(async () => {
     await closeDatabaseConnection()
   })
+
   it('should test', async () => {
 
     console.log(process.env.DATABASE_URL)
