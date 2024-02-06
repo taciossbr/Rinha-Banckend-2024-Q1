@@ -19,12 +19,12 @@ POST {{baseurl}}/clientes/1/transacoes
 Content-Type: application/json
 
 {
-    "valor": 1000000,
+    "valor": 10000,
     "tipo" : "d",
     "descricao" : "descricao"
 }
 
 
-### Add debito
+### extrato
 
 GET {{baseurl}}/clientes/1/extrato

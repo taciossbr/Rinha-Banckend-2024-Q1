@@ -31,6 +31,7 @@ npm run start:dev
 - [ ] Validação
 - [ ] Concorrência
 - [ ] Testes com o Gatling
-- [ ] Arquitetura Docker
+- [x] Arquitetura Docker
 - [ ] Indices
-
+- [ ] Testes finais com as mesmas versoes do repo, docker e gatling
+- [ ] Estudar Gatling

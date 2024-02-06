@@ -14,7 +14,7 @@ app.get('/hello', async (req, res) => {
 app.post('/clientes/:clientId/transacoes', async (req, res) => {
   const { clientId } = req.params
   const data = req.body
-  console.log(data)
+  // console.log(data)
   try {
     await dbClient.query('BEGIN')
 

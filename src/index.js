@@ -8,7 +8,8 @@ const { connectDatabase } = require('./db');
   await connectDatabase();
   const app = require('./app')
 
-  app.listen(9999, () => {
-    console.log('Listening')
+  const PORT = process.env.PORT || 8080
+  app.listen(PORT, () => {
+    console.log('Listening on ', PORT)
   })
 })()
